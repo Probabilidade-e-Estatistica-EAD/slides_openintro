@@ -1,0 +1,209 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{2.3. Amostragem de uma população pequena}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem com reposição}
+\justifying
+Na amostragem \hl{com reposição}, o elemento selecionado pode ser observado mais de uma vez. O elemento selecionado é devolvido à população. 
+
+\pause
+
+\begin{itemize}
+\justifying
+\item Imagine que você tenha uma caixa com 5 fichas vermelhas, 3 azuis e 2 laranjas. Qual é a probabilidade de que a primeira ficha que você tirar seja azul?
+
+\begin{center}
+5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$}
+\end{center}
+
+\pause
+
+\[ Prob(1^{0} \text{ ficha } B) = \frac{3}{5 + 3 + 2} = \frac{3}{10} = 0.3 \]
+
+\pause
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem com reposição}
+
+\begin{itemize}
+\justifying
+\item Suponha que você realmente tenha puxado uma ficha azul da primeira vez. Usando amostragem com reposição, qual é a probabilidade de tirar uma ficha azul na segunda vez?
+
+\pause
+
+\begin{center}
+$1^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$} \\
+
+\pause
+
+$2^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$}
+\end{center}
+
+\pause
+
+\[ Prob(2^{0} \text{ ficha } B | 1^{0} \text{ ficha } B) = \frac{3}{10} = 0.3 \]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem com reposição (cont.)}
+
+\begin{itemize}
+\justifying
+\item Suponha que você realmente tenha puxado uma ficha laranja na primeira seleção. Usando amostragem  com reposição, qual é a probabilidade da segunda ficha ser azul?
+
+\pause
+
+\begin{center}
+$1^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$} \\
+\pause
+$2^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$}
+\end{center}
+\pause
+\[ Prob(2^{0} \text{ ficha } B | 1^{0} \text{ ficha } O) = \frac{3}{10} = 0.3 \]
+
+\pause
+\justifying
+\item Se amostrar com reposição, qual é a probabilidade de selecionar duas fichas azuis?
+\begin{center}
+
+\pause
+$1^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$} \\
+$2^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$}
+\end{center}
+\pause
+\vspace{0.5cm}
+\[ Prob(1^{0} \text{ ficha } B) \cdot Prob(2^{0} \text{ ficha } B | 1^{0} \text{ ficha } B) = 0.3 \times 0.3 \]
+\[ = 0.3^2 = 0.09 \]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem com reposição (cont.)}
+
+\begin{itemize}
+\justifying
+\item Ao amostrar com reposição, a probabilidade da segunda ficha ser azul não depende da cor da primeira ficha, já que qualquer item selecionado no primeiro sorteio é colocado de volta na caixa.
+\[ Prob(B | B) = Prob(B | O) \]
+\justifying
+\item Além disso, essa probabilidade é igual à probabilidade de tirar uma ficha azul no primeiro sorteio, uma vez que a composição da caixa nunca muda quando a amostragem é feita com reposição.
+\[ Prob(B | B) = Prob(B) \]
+\justifying
+\item \hl{Ao amostrar com reposição, os sorteios são independentes.}
+
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem sem reposição}
+\justifying
+Ao amostrar \hl{sem reposição}, você não coloca de volta o que acabou de selecionar.
+
+\begin{itemize}
+
+\pause
+\justifying
+\item Suponha que aprimeira fixa selecionada seja da cor azul. Se a amostra for sem reposição, qual é a probabilidade de tirar uma ficha azul na segunda vez?
+\pause
+\begin{center}
+$1^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$} \\
+\pause
+$2^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 2 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$}
+\end{center}
+\pause
+\[ Prob(2^{0} \text{ ficha } B | 1^{0} \text{ ficha } B) = \frac{2}{9} = 0.22 \]
+
+\pause
+
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem sem reposição (cont.)}
+
+\begin{itemize}
+\justifying
+\item Se a amostragem for sem reposição, qual é a probabilidade de selecionar duas fichas azuis?
+\begin{center}
+
+\pause
+$1^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 3 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$} \\
+$2^{0}$ caixa: 5 \textcolor{red}{$\CIRCLE$}~, 2 \textcolor{blue}{$\CIRCLE$}~, 2 \textcolor{orange}{$\CIRCLE$}
+\end{center}
+\pause
+\[ Prob(1^{0} \text{ ficha } B) \cdot Prob(2^{0} \text{ ficha } B | 1^{0} \text{ ficha } B)  = 0.3 \times 0.22 \]
+\[ = 0.066 \]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Amostragem sem reposição (cont.)}
+
+\begin{itemize}
+\justifying
+\item Ao amostrar sem reposição, a probabilidade da segunda ficha ser azul dado que a primeira foi azul não é igual à probabilidade de amostrar uma ficha azul no primeiro sorteio, já que a composição da caixa muda com o resultado do primeiro sorteio.
+\[ Prob(B | B) \ne Prob(B) \]
+
+\pause
+\justifying
+\item \hl{Ao amostrar sem reposição, os sorteios não são independentes.}
+
+\pause
+\justifying
+\item Isso é especialmente importante quando os tamanhos das populações que são amostradas são pequenas. Se estivéssemos lidando com, digamos, 10.000 fichas em uma caixa (gigante), tirar uma ficha de qualquer cor não teria um impacto tão grande nas probabilidades no segundo sorteio.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\pq{Na maioria dos jogos de cartas, as cartas são distribuídas sem reposição. Qual é a probabilidade de receber um ás e depois um 3? Escolha a resposta mais próxima.}
+
+\twocol{0.3}{0.6}{
+\begin{enumerate}[(a)]
+\item 0.0045
+\item 0.0059
+\solnMult{0.0060}
+\item 0.1553
+\end{enumerate}
+}
+{
+\soln{
+\pause
+\[ P(ás~então~3) = \frac{4}{52} \times \frac{4}{51} \approx 0.0060 \]
+}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
