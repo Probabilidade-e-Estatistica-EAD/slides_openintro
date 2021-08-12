@@ -1,0 +1,259 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{3.5. Outras distribuições discretas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Distribuição binomial negativa}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Distribuição binomial negativa}
+
+\begin{itemize}
+\justifying
+\item O \hl{distribuição binomial negativa} descreve a probabilidade de observar o $ k ^ {esimo} $ sucesso na $ n ^ {esimo} $ tentativa.
+\justifying
+\item As quatro condições a seguir são úteis para identificar um caso binomial negativo:
+\begin{enumerate}
+\justifying
+\item As tentativas são independentes.
+\justifying
+\item Cada resultado do estudo pode ser classificado como um sucesso ou fracasso.
+\justifying
+\item A probabilidade de sucesso ($ p $) é a mesma para cada tentativa.
+\justifying
+\item A última tentativa deve ser um sucesso.
+\end{enumerate}
+\justifying
+Observe que as três primeiras condições são comuns à distribuição binomial.
+
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Distribuição binomial negativa}
+
+\vfill
+
+\justifying
+\formula{Distribuição binomial negativa}
+{
+P($k^{esimo}$ sucesso na $n^{esimo}$ tentativa) = ${n-1 \choose k-1}~p^k~(1-p)^{n-k}$, \\
+\justifying
+onde $ p $ é a probabilidade de que uma tentativa individual seja um sucesso. Todas as tentativas são consideradas independentes.
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\dq{Uma estudante universitária que trabalha em um laboratório de psicologia é solicitada a recrutar 10 casais para participar de um estudo. Ela decide ficar do lado de fora do centro estudantil e perguntar a cada 5 pessoas que saem do prédio se eles estão em um relacionamento e, em caso afirmativo, se eles gostariam de participar do estudo com o seu parceiro. Suponha que a probabilidade de encontrar tal pessoa seja 10\%. Qual é a probabilidade da estudante precisar perguntar a 30 pessoas antes de atingir seu objetivo?}
+
+\pause
+\justifying
+Dado: $ p = 0,10 $, $ k = 10 $, $ n = 30 $. Queremos encontrar a probabilidade do $ 10 ^ {o} $ sucesso na $ 30 ^ {a} $ tentativa, portanto usamos a distribuição binomial negativa.
+
+\pause
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+
+\begin{eqnarray*}
+P(\text{$10^{o}$ sucesso na $30^{a}$ tentativa}) &=& {29 \choose 9} \times 0.10^{10} \times 0.90^{20} \\
+\pause
+&=& 10,015,005 \times 0.10^{10} \times 0.90^{20} \\
+\pause
+&=& 0.00012
+\end{eqnarray*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Binomial vs. binomial negativo}
+\justifying
+\dq{Como a distribuição binomial negativa é diferente da distribuição binomial?}
+
+\pause
+
+\begin{itemize}
+\justifying
+\item No caso binomial, normalmente temos um número fixo de tentativas ao invés de considerar o número de sucessos.
+\justifying
+\item No caso da binomial negativa, examinamos quantas tentativas são necessárias para observar um número fixo de sucessos, exigindo que a última observação seja um sucesso.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\pq{Qual das seguintes opções descreve um caso em que usaríamos a distribuição binomial negativa para calcular a probabilidade desejada?}
+
+\begin{enumerate}[(a)]
+\justifying
+\item Probabilidade de que um menino de 5 anos seja mais alto que 106 centímetros.
+\justifying
+\item Probabilidade de que 3 de 10 arremessos de softbol sejam bem sucedidos.
+\justifying
+\item Probabilidade de receber uma sequência de mesmo naipe no poker.
+\justifying
+\item Probabilidade de perder 8 tiros antes do primeiro acerto.
+\justifying
+\solnMult{Probabilidade de acertar a bola pela 3 $ ^ {a} $ vez na 8 $ ^ {a} $ tentativa .}
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Distribuição de Poisson}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Distribuição de Poisson}
+
+\begin{itemize}
+\justifying
+\item A \hl {distribuição de Poisson} é útil para estimar o número de eventos raros por unidade de tempo para uma população grande e fixa, dado que os indivíduos dentro dessa população são independentes.
+\justifying
+\item A \hl{taxa} para uma distribuição de Poisson é o número médio de ocorrências em uma população fixa por unidade de tempo, e é denotada por \mathhl{\lambda}.
+\justifying
+\item Usando a taxa, podemos descrever a probabilidade de observar exatamente $ k $ eventos por unidade de tempo.
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Distribuição de Poisson}
+
+\vfill
+\justifying
+\formula{Distribuição de Poisson}
+{
+P(observar $ k $ eventos) = $\frac{\lambda^k e^{-\lambda}}{k!}$, \\
+\vspace{0.5 cm}
+\justifying
+onde $k$ pode ser 0, 1, 2, e assim por diante, e $k!$ representa $ k $-fatorial. A letra $e \approx 2.718$ é a base do logaritmo natural. \\
+\vspace{0.5 cm}
+\justifying
+A média e o desvio-padrão dessa distribuição são $ \lambda $ e $ \sqrt{\lambda} $, respectivamente.
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\dq{Suponha que falhas de energia elétrica ocorram em uma região rural de um país em desenvolvimento, seguindo uma distribuição de Poisson com média de 2 falhas a cada semana. \\
+Calcule a probabilidade de que, em uma determinada semana, a eletricidade falhe apenas uma vez.}
+
+\pause
+\justifying
+Dado $\lambda = 2$.
+
+\pause
+
+\begin{eqnarray*}
+P(\text{apenas 1 falha em uma semana}) &=& \frac{2^1 \times e^{-2}}{1!} \\
+\pause
+&=& \frac{2 \times e^{-2}}{1} \\
+\pause
+&=& 0.27
+\end{eqnarray*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\dq{Suponha que falhas de energia elétrica ocorram em uma região rural de um país em desenvolvimento, seguindo uma distribuição de Poisson com média de 2 falhas a cada semana. \\
+Calcule a probabilidade de que em um determinado \underline{dia} a eletricidade falhe três vezes.}
+
+\pause
+\justifying
+Temos a taxa de falha semanal, mas para responder a essa pergunta precisamos primeiro calcular a taxa média de falha em um determinado dia: $\lambda_{dia} = \frac{2}{7} = 0.2857$. Note que estamos assumindo que a probabilidade de falha de energia é a mesma em qualquer dia da semana, ou seja, assumimos independência.
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+
+\begin{eqnarray*}
+P(\text{3 falhas em um determinado dia}) &=& \frac{0.2857^1 \times e^{-0.2857}}{3!} \\
+\pause
+&=& \frac{0.2857 \times e^{-0.2857}}{6} \\
+\pause
+&=& 0.0358
+\end{eqnarray*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{É Poisson?}
+
+\begin{itemize}
+\justifying
+\item Uma variável aleatória pode seguir uma distribuição de Poisson se o evento que está sendo considerado for raro, a população for grande e os eventos ocorrerem independentemente um do outro.
+\justifying
+\item No entanto, podemos pensar em situações em que os eventos não são realmente independentes. Por exemplo, se estivermos interessados na probabilidade de um certo número de casamentos durante um verão, devemos levar em consideração que fins de semana são mais populares para casamentos.
+\justifying
+\item Nesse caso, um modelo de Poisson pode às vezes ainda ser razoável se permitirmos que ele tenha uma taxa diferente para tempos diferentes; poderíamos modelar a taxa como maior nos finais de semana do que nos dias da semana.
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{É Poisson?}
+
+\begin{itemize}
+\justifying
+\item A ideia de modelar taxas para uma distribuição de Poisson em relação a uma segunda variável (dia da semana) forma a base de alguns métodos mais avançados chamados \hl{modelos lineares generalizados}. Isso vai além do escopo deste curso, mas discutiremos uma base de modelos lineares nos Capítulos 7 e 8.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\pq{Qual variável aleatória que segue as seguintes distribuições pode assumir valores diferentes de inteiros positivos?}
+
+\begin{enumerate}[(a)]
+\item Poisson
+\item Binomial negativo
+\item Binomial
+\solnMult{Normal}
+\item Geométrico
+\end{enumerate}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
