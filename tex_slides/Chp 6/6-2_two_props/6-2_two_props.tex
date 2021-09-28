@@ -1,0 +1,415 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{6.2. Diferença entre proporções}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Derretimento de calota de gelo}
+\justifying
+\pq{Cientistas preveem que o aquecimento global pode ter grandes consequências nas regiões polares nos próximos 100 anos. Um dos possíveis efeitos é que a calota de gelo do polo norte pode derreter completamente. Se isso acontecesse realmente, te incomodaria muito, um pouco, quase nada ou nada?}
+
+\begin{enumerate}[(a)]
+\item Muito
+\item Um pouco
+\item Quase nada
+\item Nada
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Resultados de uma pesquisa}
+\justifying
+Uma pesquisa americana faz a mesma pergunta e abaixo estão as distribuições de respostas. Além disso, essa mesma pergunta foi feita para um grupo de estudantes de estatística introdutória da Universidade de Duke: \\
+
+\begin{center}
+\begin{tabular}{l r r}
+\hline
+				& Pesquisa EUA	& Duke \\
+\hline
+Muito		& 454	& 69 \\
+Um pouco			& 124 	& 30\\
+Quase nada			& 52 		& 4\\
+Nada			& 50 		& 2 \\
+\hline
+Total				& 680 	& 105\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Estimativa paramétrica e pontual}
+
+\begin{itemize}
+\justifying
+\item \hl{Parâmetro de interesse:} Diferença entre as proporções de \orange{todos} os alunos da Duke e \orange{todos} os americanos que ficariam muito incomodados com a calota de gelo do polo norte derretendo completamente.
+\[ \mathhl{ p_{Duke} - p_{EUA} }\]
+
+\pause
+
+\justifying
+\item \hl{Estimação pontual:} Diferença entre as proporções da \orange {amostra} de estudantes da Duke e da \orange {amostra} de americanos que ficariam muito incomodados com a calota de gelo do polo norte derretendo completamente.
+\[ \mathhl{ \hat{p}_{Duke} - \hat{p}_{EUA} }\]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Inferência para comparar proporções}
+
+\begin{itemize}
+\justifying
+\item Os detalhes são os mesmos de antes...
+
+\pause
+\justifying
+\item IC: \textcolor{orange}{$estimativa~pontual \pm margem~de~erro$}
+
+\pause
+\justifying
+\item TH: Usar \textcolor{orange}{$Z = \frac{estimativa~pontual - valor~nulo}{SE}$} para encontrar o p-valor apropriado.
+
+\pause
+\justifying
+\item Nós só precisamos do desvio padrão apropriado da estimativa pontual ($SE_{ \hat{p}_{Duke} - \hat{p}_{EUA}}$), que é o único novo conceito apresentado aqui.
+
+\end{itemize}
+
+\pause
+\justifying
+\formula{Desvio padrão da diferença entre duas proporções da amostra}
+{
+\[ SE_{(\hat{p}_1 - \hat{p}_2)} = \sqrt{ \frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2} } \]
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Intervalos de confiança para diferença de proporções}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Condições para IC para diferença de proporções}
+
+\begin{enumerate}
+\justifying
+\item \hl{Independência dentro dos grupos: }
+\begin{itemize}
+\justifying
+\item O grupo dos EUA é amostrado aleatoriamente e estamos assumindo que o grupo Duke representa uma amostra aleatória também.
+\pause
+\justifying
+\item $n_{Duke}$ $<$ 10\% de todos os alunos da Duke e 680 $ <$ 10 \% de todos os americanos.
+\end{itemize}
+\pause
+\justifying
+Podemos supor que as respostas dos alunos da Duke na amostra são independentes umas das outras, e as respostas dos americanos na amostra são independentes umas das outras também.
+
+\pause
+\justifying
+\item \hl{Independência entre grupos: }
+Os alunos amostrados da Duke e os americanos na pesquisa EUA são independentes uns dos outros.
+
+\pause
+\justifying
+\item \hl{Sucesso-falha:} 
+Pelo menos 10 sucessos observados e 10 falhas observadas nos dois grupos.
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\dq{Construa um intervalo de confiança de 95\% para a diferença entre as proporções de alunos da Duke e de americanos que seriam muito incomodados com o derretimento da calota de gelo do polo norte \orange{($p_{Duke} - p_{EUA}$)}.}
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{l | c c}
+Dados			& Duke		& EUA \\
+\hline
+Muito	& 69			& 454 \\
+Nada & 36			& 226 \\
+\hline
+Total			& 105		& 680 \\
+\hline
+\pause
+$\hat{p}$		& 0.657		& 0.668
+\end{tabular}
+\end{center}
+}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+
+\soln{
+\begin{eqnarray*}
+&& (\hat{p}_{Duke} - \hat{p}_{EUA}) \pm z^\star \times \sqrt{ \frac{ \hat{p}_{Duke} (1 - \hat{p}_{Duke})}{n_{Duke} } + \frac{ \hat{p}_{EUA} (1 -  \hat{p}_{EUA})}{n_{EUA} } }  \\
+\pause
+&=& (0.657 - 0.668) \pause \pm 1.96 \pause \times \sqrt{ \frac{0.657 \times 0.343}{105} + \frac{0.668 \times 0.332}{680} } \\
+\pause
+&=& -0.011 \pm \pause 1.96 \times 0.0497 \\
+\pause
+&=& -0.011 \pm 0.097 \\
+\pause
+&=& (-0.108, 0.086)
+\end{eqnarray*}
+}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{HT para comparar proporções}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\pq{Qual dos seguintes conjuntos de hipóteses é o correto para testar se a proporção de pessoas que ficariam muito incomodados pelo derretimento da calota de gelo do polo norte entre os alunos da Duke difere da proporção de todos os americanos que também ficariam muito incomodados?}
+
+\begin{enumerate}[(a)]
+\solnMult{ $H_0:  p_{Duke} = p_{EUA}$ \\
+$H_A:  p_{Duke} \ne p_{US}$ }
+\item $H_0:  \hat{p}_{Duke} = \hat{p}_{EUA}$ \\
+$H_A:  \hat{p}_{Duke} \ne \hat{p}_{EUA}$
+\solnMult{ $H_0:  p_{Duke} - p_{EUA} = 0$ \\
+$H_A:  p_{Duke} - p_{EUA} \ne 0$ }
+\item $H_0:  p_{Duke} = p_{EUA}$ \\
+$H_A:  p_{Duke} < p_{EUA}$
+\end{enumerate}
+
+\soln{
+\only<2>{\orange{Ambos (a) e (c) estão corretas.}}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Flashback para trabalhar com uma proporção}
+
+\begin{itemize}
+\justifying
+\item Ao construir um intervalo de confiança para uma proporção da população, verificamos se o número de sucessos e falhas \orange {observado} é pelo menos 10.
+\[ n\hat{p} \ge 10 \qquad \qquad n(1-\hat{p}) \ge 10 \]
+
+\pause
+\justifying
+\item Ao conduzir um teste de hipótese para uma proporção da população, verificamos se o número de sucessos e falhas \orange {esperado} é de pelo menos 10.
+\[ np_0 \ge 10 \qquad \qquad n(1-p_0) \ge 10 \]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Estimativa agrupada de uma proporção}
+
+\begin{itemize}
+\justifying
+\item No caso de comparar duas proporções onde $ H_0: p_1 = p_2 $, não há um valor nulo que possamos usar para calcular o número de sucessos e falhas \orange {esperado} em cada amostra.
+
+\pause
+\justifying
+\item Portanto, precisamos primeiro encontrar uma proporção comum (\hl {agrupado}) para os dois grupos e usá-la em nossa análise.
+
+\pause
+\justifying
+\item Isso significa encontrar a proporção de sucessos totais entre o número total de observações.
+
+\end{itemize}
+
+$\:$ \\
+\justifying
+\formula{Estimativa agrupada de uma proporção}
+{ \[ \hat{p} = \frac{\#~de~sucessos_1 + \#~de~sucessos_2}{n_1 + n_2} \] }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\dq{Calcular a estimativa \underline{proporção combinada} de estudantes da Duke e americanos que se incomodariam muito com o derretimento da calota de gelo do polo norte. De qual proporção amostrada ($\hat{p}_{Duke}$ ou $\hat{p}_{EUA}$) a estimativa agrupada está mais próxima? Por quê?}
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{l | c c}
+Data			& Duke		& EUA \\
+\hline
+Muito	& 69			& 454 \\
+Nada & 36			& 226 \\
+\hline
+Total			& 105		& 680 \\
+\hline
+$\hat{p}$		& 0.657		& 0.668
+\end{tabular}
+\end{center}
+}
+
+\pause
+
+\soln{
+\begin{eqnarray*}
+\hat{p} &=& \frac{\#~de~sucessos_1 + \#~de~sucessos_2}{n_1 + n_2} \\
+\pause
+&=& \frac{69+454}{105+680} \pause = \frac{523}{785} \pause = 0.666
+\end{eqnarray*}
+}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+\justifying
+\dq{Esses dados sugerem que a proporção de todos os alunos da Duke que seriam muito incomodados pelo derretimento da calota de gelo do norte difere da proporção de todos os americanos que o fazem? Calcule a estatística de teste, o valor p e interprete sua conclusão no contexto dos dados.}
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{l | c c}
+Dados			& Duke		& US \\
+\hline
+Muito	& 69			& 454 \\
+Nada & 36			& 226 \\
+\hline
+Total			& 105		& 680 \\
+\hline
+$\hat{p}$		& 0.657		& 0.668
+\end{tabular}
+\end{center}
+}
+
+\pause
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Prática}
+
+\soln{
+\begin{eqnarray*}
+Z &=& \frac{(\hat{p}_{Duke} - \hat{p}_{EUA})}{\sqrt{ \frac{ \hat{p} (1 - \hat{p})}{n_{Duke} } + \frac{ \hat{p} (1 -  \hat{p})}{n_{EUA} } }} \\
+\pause 
+&=& \frac{(0.657 - 0.668)}{\sqrt{ \frac{0.666 \times 0.334}{105} + \frac{0.666 \times 0.334}{680} }} = \pause \frac{-0.011}{0.0495} \pause = -0.22 \\
+\pause
+p-valor &=& 2 \times P(Z < -0.22) \pause = 2 \times 0.41 = 0.82
+\end{eqnarray*}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Recapitular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Recapitulação - comparando duas proporções}
+
+\begin{itemize}
+\justifying
+\item Parâmetro de população: $(p_1 - p_2)$, estimativa pontual: $(\hat{p}_1 - \hat{p}_2)$
+
+\pause
+
+\item Condições:
+\pause
+\begin{itemize}
+\justifying
+\item independência dentro dos grupos \\
+\justifying
+- amostra aleatória e condição de 10\% atendidas para ambos os grupos
+\justifying
+\item independência entre grupos
+\justifying
+\item pelo menos 10 sucessos e falhas em cada grupo\\ 
+\justifying
+- se não $\rightarrow$ aleatorizar (Seção 6.4)
+\end{itemize}
+
+\pause
+\justifying
+\item $SE_{(\hat{p}_1 - \hat{p}_2)} = \sqrt{ \frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2} }$
+\begin{itemize}
+\justifying
+\item para IC: usar $\hat{p}_1$ e $\hat{p}_2$
+\justifying
+\item para TH:
+\begin{itemize}
+\justifying
+\item quando $H_0: p_1 = p_2$: usar $\hat{p}_{agrupado} = \frac{\#~suc_1 + \#suc_2}{n_1 + n_2}$
+\justifying
+\item quando $H_0: p_1 - p_2 = $ \textit{(algum valor diferente de 0)}: usar $\hat{p}_1$ e $\hat{p}_2$ \\
+- isso é muito raro
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Referência - cálculos de erro padrão}
+
+\begin{center}
+\begin{tabular}{l | l | l}
+			& uma amostra					& duas amostras \\ 
+\hline
+& & \\
+média		& $SE = \frac{s}{\sqrt{n}}$			& $SE = \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$ \\
+& & \\
+\hline
+& & \\
+proporção		& $SE = \sqrt{ \frac{p(1-p)}{n} }$	& $SE = \sqrt{ \frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2} }$	 \\	
+& & \\
+\end{tabular}
+\end{center}
+
+\pause
+
+\begin{itemize}
+\justifying
+\item Ao trabalhar com médias, é muito raro que $\sigma$ seja conhecido, então geralmente usamos $s$.
+
+\pause
+\justifying
+\item Ao trabalhar com proporções, 
+\begin{itemize}
+\justifying
+\item se fazemos um teste de hipótese, $p$ vem da hipótese nula
+\justifying
+\item se construimos um intervalo de confiança, use $\hat{p}$
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
